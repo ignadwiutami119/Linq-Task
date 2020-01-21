@@ -24,3 +24,16 @@ D:\TRAININGC#\20Januari Json\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.Assem
 D:\TRAININGC#\20Januari Json\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.csproj.CopyComplete
 D:\TRAININGC#\20Januari Json\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.dll
 D:\TRAININGC#\20Januari Json\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.pdb
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.exe
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.deps.json
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.runtimeconfig.json
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.runtimeconfig.dev.json
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.dll
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Json3.pdb
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.csprojAssemblyReference.cache
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.AssemblyInfoInputs.cache
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.AssemblyInfo.cs
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.csproj.CopyComplete
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.dll
+D:\TRAININGC#\21Januari LINQ\Task\Json-Task\Json3\obj\Debug\netcoreapp3.0\Json3.pdb

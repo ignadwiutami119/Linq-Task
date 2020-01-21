@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json2\\Json-Task2.csproj": {}
+    "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json2\\Json-Task2.csproj": {}
   },
   "projects": {
-    "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json2\\Json-Task2.csproj": {
+    "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json2\\Json-Task2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json2\\Json-Task2.csproj",
+        "projectUniqueName": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json2\\Json-Task2.csproj",
         "projectName": "Json-Task2",
-        "projectPath": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json2\\Json-Task2.csproj",
+        "projectPath": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json2\\Json-Task2.csproj",
         "packagesPath": "D:\\Users\\bsi50132\\.nuget\\packages\\",
-        "outputPath": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json2\\obj\\",
+        "outputPath": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

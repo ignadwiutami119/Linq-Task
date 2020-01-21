@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json3\\Json3.csproj",
+      "projectUniqueName": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json3\\Json3.csproj",
       "projectName": "Json3",
-      "projectPath": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json3\\Json3.csproj",
+      "projectPath": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json3\\Json3.csproj",
       "packagesPath": "D:\\Users\\bsi50132\\.nuget\\packages\\",
-      "outputPath": "D:\\TRAININGC#\\20Januari Json\\Json-Task\\Json3\\obj\\",
+      "outputPath": "D:\\TRAININGC#\\21Januari LINQ\\Task\\Json-Task\\Json3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,126 +1,88 @@
 ﻿using System;
-using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
 
-namespace Json_Task2
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            json obj = new json();
-            var ObjekList = JsonConvert.DeserializeObject<List<objek>>(obj.jsonformat);
-            var CustomerList = JsonConvert.DeserializeObject<List<customer>>(obj.jsonformat);
+namespace Json_Task2 {
+  class Program {
+    static void Main (string[] args) {
+      json obj = new json ();
+      var ObjekList = JsonConvert.DeserializeObject<List<objek>> (obj.jsonformat);
+      var CustomerList = JsonConvert.DeserializeObject<List<customer>> (obj.jsonformat);
 
-            Console.WriteLine();
-            Console.WriteLine("--------DESERIALIZED SECOND JSON FORMAT--------");
-            Console.WriteLine();
-            Console.WriteLine("All purchase made in February (show in id):");
-            int month;
-            foreach (var a in ObjekList)
-            {
-                month = (a.Created).Month;
-                if (month == 2)
-                {
-                    Console.WriteLine("Order ID : " + a.Id);
-                }
-            }
+      Console.WriteLine ("\n--------DESERIALIZED SECOND JSON FORMAT--------");
+      Console.WriteLine ("\nAll purchase made in February (show in id):");
+      var purchase_feb = ObjekList.Where (a => a.Created.Month == 2).Select (a => a.Id);
+      foreach (var item in purchase_feb) {
+        Console.WriteLine ("-" + item);
+      }
 
-            System.Console.WriteLine();
-            Console.WriteLine("All purchase made by Ari (show in id):");
-            foreach (var a in ObjekList)
-            {
-                if ((a.Customer.Name).Contains("Ari"))
-                {
-                    Console.WriteLine("Order ID : " + a.Id);
-                }
-            }
+      Console.WriteLine ("\nAll purchase made by Ari (show in id):");
+      var purcashAri = ObjekList.Where (a => a.Customer.Name.Contains ("Ari")).Select (a => a.Id);
+      foreach (var item in purcashAri) {
+        Console.WriteLine ("-" + item);
+      }
 
-            System.Console.WriteLine();
-            System.Console.WriteLine("Grand total of item that purcashed by Ari : ");
-            Console.WriteLine(AriPrice());
+      System.Console.WriteLine ();
+      System.Console.WriteLine ("Grand total of item that purcashed by Ari : ");
+      Console.WriteLine (AriPrice ());
 
-            System.Console.WriteLine();
-            System.Console.WriteLine("People who have purchases with grand total lower than 300000 : ");
-            Console.WriteLine(lowerPrice());
+      System.Console.WriteLine ();
+      System.Console.WriteLine ("People who have purchases with grand total lower than 300000 : ");
+      Console.WriteLine (lowerPrice ());
 
-            int AriPrice()
-            {
-                int sum = 0;
-                foreach (var a in ObjekList)
-                {
-                    if ((a.Customer.Name).Contains("Ari"))
-                    {
-                        // foreach (var b in )
-                        // {
-                        //     if (b.Key == "price")
-                        //     {
-                        //         sum += Convert.ToInt32(b.Value);
-                        //     }
-                        // }
-                        foreach (var b in a.ItemList)
-                            sum += ((b.Price) * (b.Quantity));
-                    }
-                }
-                return sum;
-            }
-
-            int AnnisPrice()
-            {
-                int sum = 0;
-                foreach (var a in ObjekList)
-                {
-                    if ((a.Customer.Name).Contains("Annis"))
-                    {
-
-                        foreach (var b in a.ItemList)
-                            sum += ((b.Price) * (b.Quantity));
-                    }
-                }
-                return sum;
-            }
-
-            int RirinPrice()
-            {
-                int sum = 0;
-                foreach (var a in ObjekList)
-                {
-                    if ((a.Customer.Name).Contains("Ririn"))
-                    {
-
-                        foreach (var b in a.ItemList)
-                            sum += ((b.Price) * (b.Quantity));
-                    }
-                }
-                return sum;
-            }
-
-
-            string lowerPrice()
-            {
-                string hasil = "";
-
-                Dictionary<string, int> list = new Dictionary<string, int>(){
-                {"Ari",AriPrice()},
-                {"Annis",AnnisPrice()},
-                {"Ririn",RirinPrice()}
-              };
-
-                foreach (KeyValuePair<string, int> item in list)
-                    if (item.Value < 300000)
-                    {
-                        hasil += item.Key + "\n";
-                    }
-                return hasil;
-            }
+      int AriPrice () {
+        int AriPrice = 0;
+        var purcash_Ari = from item in ObjekList
+        where item.Customer.Name.Contains ("Ari")
+        from a in item.ItemList
+        select new { price = a.Price, qty = a.Quantity };
+        foreach (var item in purcash_Ari) {
+          AriPrice += ((item.price) * (item.qty));
         }
+        return AriPrice;
+      }
+
+      int AnnisPrice () {
+        int AnnisPrice = 0;
+        var purcash_Annis = from item in ObjekList
+        where item.Customer.Name.Contains ("Annis")
+        from a in item.ItemList
+        select new { price = a.Price, qty = a.Quantity };
+        foreach (var item in purcash_Annis) {
+          AnnisPrice += ((item.price) * (item.qty));
+        }
+        return AnnisPrice;
+      }
+
+      int RirinPrice () {
+        int RirinPrice = 0;
+        var purcash_Ririn = from item in ObjekList
+        where item.Customer.Name.Contains ("Ririn")
+        from a in item.ItemList
+        select new { price = a.Price, qty = a.Quantity };
+        foreach (var item in purcash_Ririn) {
+          RirinPrice += ((item.price) * (item.qty));
+        }
+        return RirinPrice;
+      }
+
+      string lowerPrice () {
+        string hasil = "";
+        Dictionary<string, int> list = new Dictionary<string, int> () { { "Ari", AriPrice () }, { "Annis", AnnisPrice () }, { "Ririn", RirinPrice () }
+        };
+        foreach (KeyValuePair<string, int> item in list)
+          if (item.Value < 300000) {
+            hasil += item.Key + "\n";
+          }
+        return hasil;
+      }
     }
+  }
 
-
-    class json
-    {
-        public string jsonformat = @"[
+  class json {
+    public string jsonformat = @"[
   {
     ""order_id"": ""SO-921"",
     ""created_at"": ""2018-02-17T03:24:12"",
@@ -176,45 +138,41 @@ namespace Json_Task2
     ]
   }
 ]";
-    }
+  }
 
+  class customer {
+    [JsonProperty ("id")]
+    public int Id { get; set; }
 
-    class customer
-    {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
+  }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
-    }
+  class objek {
+    [JsonProperty ("order_id")]
+    public string Id { get; set; }
 
-    class objek
-    {
-        [JsonProperty("order_id")]
-        public string Id { get; set; }
+    [JsonProperty ("created_at")]
+    public DateTime Created { get; set; }
 
-        [JsonProperty("created_at")]
-        public DateTime Created { get; set; }
+    [JsonProperty ("customer")]
+    public customer Customer { get; set; }
 
-        [JsonProperty("customer")]
-        public customer Customer { get; set; }
+    [JsonProperty ("items")]
+    public List<items> ItemList { get; set; } = new List<items> ();
+  }
 
-        [JsonProperty("items")]
-        public List<items> ItemList { get; set; } = new List<items>();
-    }
+  public class items {
+    [JsonProperty ("id")]
+    public int Id { get; set; }
 
-    public class items
-    {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+    [JsonProperty ("qty")]
+    public int Quantity { get; set; }
 
-        [JsonProperty("qty")]
-        public int Quantity { get; set; }
-
-        [JsonProperty("price")]
-        public int Price { get; set; }
-    }
+    [JsonProperty ("price")]
+    public int Price { get; set; }
+  }
 }

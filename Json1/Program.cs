@@ -16,11 +16,6 @@ namespace Json_Task {
             System.Console.WriteLine ();
 
             Console.WriteLine ("User who doesn't have any phone number :");
-            // foreach (var a in ObjekList)
-            // {
-            //     if ((a.profile.Phones).Count == 0)
-            //         Console.WriteLine("- " + a.profile.Fullname);
-            // }
             var noPhone = ObjekList.Where (a => a.profile.Phones.Count == 0).Select (a => a.profile.Fullname);
             foreach (var item in noPhone) {
                 Console.WriteLine (item);
